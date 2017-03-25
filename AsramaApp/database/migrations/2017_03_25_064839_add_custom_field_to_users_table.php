@@ -15,8 +15,7 @@ class AddCustomFieldToUsersTable extends Migration
     {
         Schema::table('users', function(Blueprint $table)
         {
-            $table->string('username');
-            $table->renameColumn('id', 'id_user');
+            $table->string('username')->unique();
             $table->renameColumn('name', 'nama');
         });
     }
@@ -31,7 +30,6 @@ class AddCustomFieldToUsersTable extends Migration
         Schema::table('users', function(Blueprint $table)
         {
             $table->dropColumn('username');
-            $table->renameColumn('id_user', 'id');
             $table->renameColumn('nama', 'name');
         });
     }
