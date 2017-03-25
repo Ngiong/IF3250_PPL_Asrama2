@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/editprofile', 'UserController@edit_penghuni_info');
+Route::post('editprofile', 'UserController@save_penghuni_info')->name('editprofile');
+
+
