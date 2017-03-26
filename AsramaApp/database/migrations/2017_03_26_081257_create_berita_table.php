@@ -17,6 +17,7 @@ class CreateBeritaTable extends Migration
           $table->increments('id_berita');
           $table->unsignedInteger('id_penulis');
           $table->foreign('id_penulis')->references('id')->on('users');
+          $table->string('title');
           $table->text('isi');
           $table->timestamps();
       });

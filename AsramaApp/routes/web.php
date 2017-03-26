@@ -21,5 +21,4 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/editprofile', 'UserController@edit_penghuni_info');
 Route::post('editprofile', 'UserController@save_penghuni_info')->name('editprofile');
-
-
+Route::get('/pengumuman', 'MiscController@load_all_pengumuman');

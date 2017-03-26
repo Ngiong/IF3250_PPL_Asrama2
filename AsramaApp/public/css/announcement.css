@@ -1,0 +1,24 @@
+.announcement {
+  padding: 10px 15px 0px;
+  color: #444;
+  border: 1px solid #e1e1e1;
+  background-color: #f9f9f9;
+}
+
+.announcement.body {
+  font-size: 75%;
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+.announcement.p {
+  font-size: 2em;
+  margin: 0;
+  font-weight: normal;
+}
+
+.announcement.h2 {
+  font-size: 4.0em;
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-weight: normal;
+}

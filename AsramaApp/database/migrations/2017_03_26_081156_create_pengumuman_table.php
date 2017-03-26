@@ -17,6 +17,7 @@ class CreatePengumumanTable extends Migration
           $table->increments('id_pengumuman');
           $table->unsignedInteger('id_penulis');
           $table->foreign('id_penulis')->references('id')->on('users');
+          $table->string('title');
           $table->text('isi');
           $table->timestamps();
       });
