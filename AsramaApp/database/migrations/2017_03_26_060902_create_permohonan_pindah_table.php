@@ -16,6 +16,7 @@ class CreatePermohonanPindahTable extends Migration
         Schema::create('permohonan_pindah', function (Blueprint $table) {
             $table->increments('id_permohonan');
             $table->unsignedInteger('id_user');
+			$table->foreign('id_user')->references('id')->on('users');
             $table->unsignedInteger('id_kamar_lama');
             $table->unsignedInteger('id_kamar_baru');
             $table->string('alasan');

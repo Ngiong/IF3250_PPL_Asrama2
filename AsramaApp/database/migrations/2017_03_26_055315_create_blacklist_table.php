@@ -14,8 +14,9 @@ class CreateBlacklistTable extends Migration
     public function up()
     {
         Schema::create('blacklist', function (Blueprint $table) {
-            $table->integer('id_user');
+            $table->unsignedInteger('id_user');
 			$table->primary('id_user');
+			$table->foreign('id_user')->references('id')->on('users');
             $table->string('alasan');
         });
     }
