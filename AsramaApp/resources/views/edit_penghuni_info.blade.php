@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Edit Data Penghuni</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('editprofile') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('edit_penghuni_info') }}">
                         {{ csrf_field() }}
                         <h1> Biodata diri </h1>
                         <!-- IDENTITAS PENGGUNA -->
@@ -22,7 +22,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <input id="nomor_identitas" type="text" class="form-control" name="nomor_identitas" value="{{ old('nomor_identitas') }}" required autofocus>
+                                <input id="nomor_identitas" type="text" class="form-control" name="nomor_identitas" value="{{ $info_penghuni->nomor_identitas }}" required autofocus>
 
                                 @if ($errors->has('nomor_identitas'))
                                     <span class="help-block">
@@ -61,7 +61,7 @@
                             <label for="ttl" class="col-md-3 control-label">Tempat, Tanggal Lahir</label>
 
                             <div class="col-md-3">
-                                <input id="tempat_lahir" type="text" class="form-control" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required>
+                                <input id="tempat_lahir" type="text" class="form-control" name="tempat_lahir" value="{{ $info_penghuni->tempat_lahir }}" required>
                                 @if ($errors->has('tempat_lahir'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('tempat_lahir') }}</strong>
@@ -69,7 +69,7 @@
                                 @endif
                             </div>
                             <div class="col-md-6">
-                                <input id="tanggal_lahir" type="text" class="form-control" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" required>
+                                <input id="tanggal_lahir" type="text" class="form-control" name="tanggal_lahir" value="{{ $info_penghuni->tanggal_lahir }}" required>
 
                                 @if ($errors->has('tanggal_lahir'))
                                     <span class="help-block">
@@ -83,8 +83,7 @@
                             <label for="alamat" class="col-md-3 control-label">Alamat</label>
 
                             <div class="col-md-9">
-                                <textarea id="alamat" class="form-control" name="alamat" value="{{ old('alamat') }}" style="resize: none;" required>
-                                </textarea>
+                                <textarea id="alamat" class="form-control" name="alamat" style="resize: none;" required>{{ $info_penghuni->alamat }}</textarea>
                             </div>
                         </div>
 
@@ -92,7 +91,7 @@
                         <div class="form-group{{ $errors->has('pekerjaan') ? ' has-error' : '' }}">
                             <label for="pekerjaan" class="col-md-3 control-label">Pekerjaan</label>
                             <div class="col-md-9">
-                                <input id="pekerjaan" type="text" class="form-control" name="pekerjaan" value="{{ old('pekerjaan') }}" required>
+                                <input id="pekerjaan" type="text" class="form-control" name="pekerjaan" value="{{ $info_penghuni->pekerjaan }}" required>
 
                                 @if ($errors->has('pekerjaan'))
                                     <span class="help-block">
@@ -119,7 +118,7 @@
                             <label for="warga_negara" class="col-md-3 control-label">Warga Negara</label>
 
                             <div class="col-md-3">
-                                <input id="warga_negara" type="text" class="form-control" name="warga_negara" value="{{ old('warga_negara') }}" required>
+                                <input id="warga_negara" type="text" class="form-control" name="warga_negara" value="{{ $info_penghuni->warga_negara }}" required>
 
                                 @if ($errors->has('warga_negara'))
                                     <span class="help-block">
@@ -133,7 +132,7 @@
                         <div class="form-group{{ $errors->has('telepon') ? ' has-error' : '' }}">
                             <label for="telepon" class="col-md-3 control-label">Telepon</label>
                             <div class="col-md-9">
-                                <input id="telepon" type="text" class="form-control" name="telepon" value="{{ old('telepon') }}" required>
+                                <input id="telepon" type="text" class="form-control" name="telepon" value="{{ $info_penghuni->telepon }}" required>
 
                                 @if ($errors->has('telepon'))
                                     <span class="help-block">
@@ -145,7 +144,7 @@
                         <div class="form-group{{ $errors->has('instansi') ? ' has-error' : '' }}">
                             <label for="instansi" class="col-md-3 control-label">Instansi</label>
                             <div class="col-md-9">
-                                <input id="instansi" type="text" class="form-control" name="instansi" value="{{ old('instansi') }}" required>
+                                <input id="instansi" type="text" class="form-control" name="instansi" value="{{ $info_penghuni->instansi }}" required>
 
                                 @if ($errors->has('instansi'))
                                     <span class="help-block">
@@ -161,7 +160,7 @@
                         <div class="form-group{{ $errors->has('nama_ortu_wali') ? ' has-error' : '' }}">
                             <label for="nama_ortu_wali" class="col-md-3 control-label">Nama Ortu Wali</label>
                             <div class="col-md-9">
-                                <input id="nama_ortu_wali" type="text" class="form-control" name="nama_ortu_wali" value="{{ old('nama_ortu_wali') }}" required>
+                                <input id="nama_ortu_wali" type="text" class="form-control" name="nama_ortu_wali" value="{{ $info_penghuni->nama_ortu_wali }}" required>
 
                                 @if ($errors->has('nama_ortu_wali'))
                                     <span class="help-block">
@@ -173,7 +172,7 @@
                         <div class="form-group{{ $errors->has('pekerjaan_ortu_wali') ? ' has-error' : '' }}">
                             <label for="pekerjaan_ortu_wali" class="col-md-3 control-label">Pekerjaan Ortu Wali</label>
                             <div class="col-md-9">
-                                <input id="pekerjaan_ortu_wali" type="text" class="form-control" name="pekerjaan_ortu_wali" value="{{ old('pekerjaan_ortu_wali') }}" required>
+                                <input id="pekerjaan_ortu_wali" type="text" class="form-control" name="pekerjaan_ortu_wali" value="{{ $info_penghuni->pekerjaan_ortu_wali }}" required>
 
                                 @if ($errors->has('pekerjaan_ortu_wali'))
                                     <span class="help-block">
@@ -185,8 +184,7 @@
                         <div class="form-group{{ $errors->has('alamat_ortu_wali') ? ' has-error' : '' }}">
                             <label for="alamat_ortu_wali" class="col-md-3 control-label">Alamat Ortu Wali</label>
                             <div class="col-md-9">
-                                <textarea id="alamat_ortu_wali" class="form-control" name="alamat_ortu_wali" value="{{ old('alamat_ortu_wali') }}" style="resize: none;" required>
-                                </textarea>
+                                <textarea id="alamat_ortu_wali" class="form-control" name="alamat_ortu_wali" style="resize: none;" required>{{ $info_penghuni->alamat_ortu_wali }}</textarea>
 
                                 @if ($errors->has('alamat_ortu_wali'))
                                     <span class="help-block">
@@ -198,7 +196,7 @@
                         <div class="form-group{{ $errors->has('telepon_ortu_wali') ? ' has-error' : '' }}">
                             <label for="telepon_ortu_wali" class="col-md-3 control-label">Telepon Ortu Wali</label>
                             <div class="col-md-9">
-                                <input id="telepon_ortu_wali" type="text" class="form-control" name="telepon_ortu_wali" value="{{ old('telepon_ortu_wali') }}" required>
+                                <input id="telepon_ortu_wali" type="text" class="form-control" name="telepon_ortu_wali" value="{{ $info_penghuni->telepon_ortu_wali }}" required>
 
                                 @if ($errors->has('telepon_ortu_wali'))
                                     <span class="help-block">
@@ -213,7 +211,7 @@
                         <div class="form-group{{ $errors->has('kontak_darurat') ? ' has-error' : '' }}">
                             <label for="kontak_darurat" class="col-md-3 control-label">Kontak Darurat</label>
                             <div class="col-md-9">
-                                <input id="kontak_darurat" type="text" class="form-control" name="kontak_darurat" value="{{ old('kontak_darurat') }}" required>
+                                <input id="kontak_darurat" type="text" class="form-control" name="kontak_darurat" value="{{ $info_penghuni->kontak_darurat }}" required>
 
                                 @if ($errors->has('kontak_darurat'))
                                     <span class="help-block">
