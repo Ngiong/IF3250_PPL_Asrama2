@@ -15,7 +15,8 @@ class CreateBeritaTable extends Migration
     {
       Schema::create('berita', function (Blueprint $table) {
           $table->increments('id_berita');
-          $table->string('id_penulis')->references('id')->on('users');
+          $table->unsignedInteger('id_penulis');
+          $table->foreign('id_penulis')->references('id')->on('users');
           $table->text('isi');
           $table->timestamps();
       });
