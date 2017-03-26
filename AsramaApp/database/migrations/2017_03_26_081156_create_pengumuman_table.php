@@ -15,7 +15,8 @@ class CreatePengumumanTable extends Migration
     {
       Schema::create('pengumuman', function (Blueprint $table) {
           $table->increments('id_pengumuman');
-          $table->string('id_penulis')->references('id')->on('users');
+          $table->unsignedInteger('id_penulis');
+          $table->foreign('id_penulis')->references('id')->on('users');
           $table->text('isi');
           $table->timestamps();
       });
