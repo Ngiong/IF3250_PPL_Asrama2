@@ -76,7 +76,7 @@
                     @endif
                 </div>
             @endif
-
+            <a href="{{ url('/asrama') }}">DATA ASRAMA</a>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel

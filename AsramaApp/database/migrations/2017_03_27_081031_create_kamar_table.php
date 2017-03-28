@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGedungTable extends Migration
+class CreateKamarTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateGedungTable extends Migration
      */
     public function up()
     {
-        Schema::create('gedung', function (Blueprint $table) {
-            $table->increments('id_gedung');
+        Schema::create('kamar', function (Blueprint $table) {
+            $table->increments('id_kamar');
             $table->unsignedInteger('id_asrama');
+            $table->foreign('id_asrama')->references('id_asrama')->on('asrama');
             $table->string('nama');
             $table->integer('kapasitas');
-            $table->integer('jumlah_pendaftar');
+            $table->integer('jumlah_penghuni');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateGedungTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gedung');
+        Schema::dropIfExists('kamar');
     }
 }
