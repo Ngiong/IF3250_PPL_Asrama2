@@ -13,7 +13,7 @@ class CreateBlacklistTable extends Migration
      */
     public function up()
     {
-        Schema::create('blacklist', function (Blueprint $table) {
+        Schema::create('blacklists', function (Blueprint $table) {
             $table->unsignedInteger('id_user');
 			$table->primary('id_user');
 			$table->foreign('id_user')->references('id')->on('users');
@@ -28,6 +28,6 @@ class CreateBlacklistTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blacklist');
+        Schema::dropIfExists('blacklists');
     }
 }
