@@ -6,6 +6,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+        	<a href="{{ url('/asrama') }}">DATA ASRAMA</a><br>
+            <a href="{{ url('/blacklists') }}">LIST BLACKLIST</a><br>
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
