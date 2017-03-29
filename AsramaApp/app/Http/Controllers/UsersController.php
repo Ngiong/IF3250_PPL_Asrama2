@@ -51,7 +51,7 @@ class UsersController extends Controller
 		$len = $_GET['length'];
 		$start = $_GET['start'];
 
-		$select = "SELECT *,1,2 ";
+		$select = "SELECT id,nama,email,created_at,updated_at,username ";
 		$presql = " FROM users a ";
 		if($_GET['search']['value']) {	
 			$presql .= " WHERE nama LIKE '%".$_GET['search']['value']."%' ";
