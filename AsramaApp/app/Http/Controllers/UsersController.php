@@ -104,25 +104,16 @@ class UsersController extends Controller
 			    $user->id = $request->id?:0;
 				
 	    		
-					    $user->nama = $request->nama;
+			    $user->nama = $request->nama;
+
 		
-	    		
-					    $user->email = $request->email;
+			    $user->email = $request->email;
+
 		
-	    		
-					    $user->password = $request->password;
+			    $user->password = bcrypt('asramaitb');
+
 		
-	    		
-					    $user->remember_token = $request->remember_token;
-		
-	    		
-					    $user->created_at = $request->created_at;
-		
-	    		
-					    $user->updated_at = $request->updated_at;
-		
-	    		
-					    $user->username = $request->username;
+			    $user->username = $request->username;
 		
 	    	    //$user->user_id = $request->user()->id;
 	    $user->save();

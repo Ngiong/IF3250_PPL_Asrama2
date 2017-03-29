@@ -38,23 +38,7 @@
 					<input type="text" name="email" id="email" class="form-control" value="{{$model['email'] or ''}}" readonly="readonly">
 				</div>
 			</div>
-			
-					
-			<div class="form-group">
-				<label for="password" class="col-sm-3 control-label">Password</label>
-				<div class="col-sm-6">
-					<input type="text" name="password" id="password" class="form-control" value="{{$model['password'] or ''}}" readonly="readonly">
-				</div>
-			</div>
-			
-					
-			<div class="form-group">
-				<label for="remember_token" class="col-sm-3 control-label">Remember Token</label>
-				<div class="col-sm-6">
-					<input type="text" name="remember_token" id="remember_token" class="form-control" value="{{$model['remember_token'] or ''}}" readonly="readonly">
-				</div>
-			</div>
-			
+            
 					
 			<div class="form-group">
 				<label for="created_at" class="col-sm-3 control-label">Created At</label>
