@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kepex/laravel-crud-generator": "^0.1.7"
+    }
+}
