@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('UPT Asrama ITB', 'Laravel') }}</title>
 
 	<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -55,7 +55,12 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/asrama">Data Asrama</a></li>
+						<li><a href="/pengumuman">Berita &amp; Pengumuman</a></li>
+						<li><a href="/organisasi">Organisasi</a></li>
+						<li><a href="/download">Download</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

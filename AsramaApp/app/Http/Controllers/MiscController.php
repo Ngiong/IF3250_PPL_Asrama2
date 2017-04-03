@@ -11,4 +11,9 @@ class MiscController extends Controller
       $pengumuman = Model_Pengumuman::all()->sortByDesc("updated_at");
       return view('/pengumuman', ['pengumuman'=> $pengumuman]);
     }
+	
+	public function load_all_pengumuman_welcome() {
+      $pengumuman = Model_Pengumuman::all()->sortByDesc("updated_at");
+      return view('/welcome', ['pengumuman'=> $pengumuman]);
+    }
 }
